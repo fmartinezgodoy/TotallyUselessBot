@@ -3,7 +3,7 @@ import { BOT_TOKEN } from '../.env/botToken';
 
 export const uselessBot = new Telegraf(BOT_TOKEN);
 
-let state = { enojado: false };
+let state = { angry: false };
 uselessBot.command('start', (ctx) => {
     ctx.reply(':)');
 });
@@ -28,5 +28,5 @@ uselessBot.on('text', (ctx) => {
         ctx.reply(`Hola, ${first_name}, dijiste ${palabra}`);
 
     // Se pueden controlar estados
-    state.enojado && ctx.reply('No me intersa hablarte');
+    state.angry && ctx.reply('No me intersa hablarte');
 });
